@@ -1,6 +1,6 @@
-import { ReactNode } from "react"
+import { ReactNode, ButtonHTMLAttributes } from "react"
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: ReactNode,
 }
 
