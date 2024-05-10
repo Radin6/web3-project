@@ -4,7 +4,7 @@ export function hexaToNumber(hexaInput : string) {
 }
 
 export function eth2wei(ethAmmount : number) : number {
-  return ethAmmount*10**18;
+  return ethAmmount*(10**18);
 }
 
 export function wei2eth(weiAmmount : number) : number {

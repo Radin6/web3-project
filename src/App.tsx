@@ -5,11 +5,7 @@ function App() {
 
   return (
     <main className="m-5">
-      <div className="flex justify-between">
-        <h1>Web3 App</h1>
         <WalletComponent />  
-      </div>
-      
     </main>
   )
 }

@@ -1,13 +1,14 @@
 import { eth2wei } from "./utils";
 
 type sendTransactionProps = {
-  walletTo: string,
-  walletFrom: string,
-  value: number,
+  walletTo: string
+  walletFrom: string
+  value: number
 }
 
-export const sendTransaction = ({walletTo, walletFrom, value} : sendTransactionProps) => {
-  window.ethereum.request({
+export const sendTransaction = async({walletTo, walletFrom, value} : sendTransactionProps) => {
+  
+  const response = await window.ethereum.request({
     method: "eth_sendTransaction",
     params: [
       {
@@ -16,5 +17,7 @@ export const sendTransaction = ({walletTo, walletFrom, value} : sendTransactionP
         value: eth2wei(value),
       }
     ]
-  }).then(_txHash => _txHash);
+  });
+
+  return response;
 }
