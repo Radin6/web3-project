@@ -1,7 +1,7 @@
 //import { useEffect, useState } from "react";
-import { WalletComponent } from "./components/WalletComponent";
+import { WalletComponent } from "../../components/WalletComponent";
 
-function App() {
+function Wallet() {
 
   return (
     <main className="m-5">
@@ -10,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default Wallet
