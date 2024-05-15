@@ -2,8 +2,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import { useEffect, useState } from "react";
 import { Button } from "./Button";
 import { hexaToNumber, wei2eth, eth2wei } from "../utils/utils";
-import { sendTransaction } from "../utils/requests";
-import web3 from 'web3';
+
 
 export function WalletComponent() {
   const [hasProvider, setHasProvider] = useState<boolean | null>();
@@ -13,9 +12,9 @@ export function WalletComponent() {
   const [walletTo, setWalletTo] = useState<string>("");
   const [ethAmount, setEthAmount] = useState<number>(0);
   const [error, setError] = useState<string>("");
-  const [txHash, setTxHash] = useState();
+  const [txHash, setTxHash] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [signature, setSignature] = useState();
+  const [signature, setSignature] = useState<string>("");
 
   useEffect(() => {
     const getProvider = async () => {
@@ -82,8 +81,8 @@ export function WalletComponent() {
       method: "eth_signTypedData_v4",
       params: [wallet, msgParams],
     })
-    .then((_signature) => setSignature(_signature))
-    .catch(_error => setError(_error));
+    .then((_signature: string) => setSignature(_signature))
+    .catch((_error: string) => setError(_error));
   }
 
   const resetError = () => {setError("")}
@@ -133,9 +132,9 @@ export function WalletComponent() {
           <p className="break-all">Signature: {signature}</p>}
       </div>
       <div>
-        {error.message &&
+        {error &&
         <>
-          <p className="text-red-500 text-sm">{"Error: "+ error.message}</p>
+          <p className="text-red-500 text-sm">{"Error: "+ error}</p>
           <button 
             className="text-sm border"
             onClick={resetError}>Delete error msg</button>
