@@ -7,7 +7,7 @@ import {
 import './index.css';
 import Home from './pages/home/home';
 import Wallet from './pages/wallet/wallet';
-import { Test } from './pages/test/test';
+//import { Test } from './pages/test/test';
 
 const router = createBrowserRouter([
   {
@@ -18,10 +18,10 @@ const router = createBrowserRouter([
     path: "/wallet",
     element: <Wallet />
   },
-  {
-    path: "/test",
-    element: <Test />
-  }
+  // {
+  //   path: "/test",
+  //   element: <Test />
+  // }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
