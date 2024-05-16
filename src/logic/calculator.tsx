@@ -20,7 +20,7 @@ export function calculateResult({
   const totalInA = ATokensOwn + BTokensOwn/valueB;
 
   // Total number of Token B if all were converted to Token B
-  const totalInB = BTokensOwn*valueB + BTokensOwn;
+  const totalInB = ATokensOwn*valueB + BTokensOwn;
 
   // Ratio of A over B
   const ratioAB = ATokensProp/BTokensProp;
