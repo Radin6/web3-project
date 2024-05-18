@@ -11,11 +11,11 @@ import Wallet from './pages/wallet/wallet';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/web3-project/",
     element: <Home />,
   },
   {
-    path: "/wallet",
+    path: "/web3-project/wallet",
     element: <Wallet />
   },
   // {
